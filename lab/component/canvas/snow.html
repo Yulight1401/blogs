@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: black">
+<canvas id="myCanvas1" width="768" height="512" style="background-color: transparent;position:absolute">
+    你的浏览器不支持HTMNL5 </canvas>
+<canvas id="myCanvas" width="768" height="512" ></canvas>
+</body>
+<script>
+
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var w=canvas.width;
+    var h=canvas.height;
+    var  image=new Image();
+
+    image.src="022.jpg";
+    image.onload=function(){
+        ctx.drawImage(image,0,0);
+    }
+
+    var canvas1 = document.getElementById("myCanvas1");
+    var ctx1 = canvas1.getContext("2d");
+    var  wind=0;
+    var snowX=[];
+    var snowY=[];
+    var  snows =150;
+    var snowSize =3 ;
+    for(i = 0; i < snows; i++)
+    {
+        snowX[i] =Math.floor(Math.random()*w)-10;
+        snowY[i] =Math.floor(Math.random()*h)-10;
+    }
+
+    function drawBackSnow()
+    {
+        ctx1.clearRect(0,0,w,h);
+        ctx1.fillStyle="#fff";
+        for(i = 0; i < snows; i++)
+        {
+            ctx1.beginPath();
+            ctx1.arc(snowX[i], snowY[i], snowSize,0,2*Math.PI,true);
+            ctx1.closePath();
+            ctx1.fill();//填充绘制的圆
+            snowX[i] += Math.floor(Math.random()* 2) + wind;
+            snowY[i] += Math.floor(Math.random()*6);
+            if(snowX[i] >= w) snowX[i] = 0;
+            if(snowY[i] >= h) snowY[i]=0;
+        }
+        wind = Math.floor(Math.random()*6) - 1 ;
+    }
+    setInterval("drawBackSnow()",300);
+</script>
+
+</html>

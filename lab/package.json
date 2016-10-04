@@ -1,0 +1,14 @@
+{
+  "name": "blogslab",
+  "version": "1.0.0",
+  "description": "yulslab",
+  "main": "index.js",
+  "scripts": {
+    "test": "bgtest"
+  },
+  "keywords": [
+    "yuliang"
+  ],
+  "author": "yul",
+  "license": "ISC"
+}

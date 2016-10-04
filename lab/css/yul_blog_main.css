@@ -1,0 +1,226 @@
+body {
+    margin: 0 auto;
+}
+
+#intro {
+    background-image: url("http://v5.res.dandyweng.com/images/backgrounds/intro.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: auto;
+}
+#intro #logo {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 18px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: auto;
+    overflow: hidden;
+    padding: auto;
+}
+#intro #logo #org {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+#intro #logo #org #orgimg {
+    background-image: url("http://v5.res.dandyweng.com/images/portaits/square.jpg");
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#intro #logo #org #flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+#intro #logo #org #flip #flipimg {
+    background-image: url("http://v5.res.dandyweng.com/images/portaits/square.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    transform: translate(-200px, 0);
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+}
+
+#homeschool {
+    background-image: url("http://v5.res.dandyweng.com/images/overlay-lba-x2.png"), url("http://v5.res.dandyweng.com/images/backgrounds/intro.jpg");
+    background-attachment: fixed, fixed;
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 10em 0 10em 0;
+}
+
+#travel {
+    background-image: url("http://v5.res.dandyweng.com/images/patterns/stardust.png");
+    padding: 10em 0 10em 0;
+}
+
+#photography {
+    background-image: url("http://v5.res.dandyweng.com/images/patterns/crossword.png");
+    padding: 10em 0 10em 0;
+}
+
+#design {
+    background-image: url("http://v5.res.dandyweng.com/images/backgrounds/design.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 10em 0 10em 0;
+}
+
+#speech {
+    background-image: url("http://v5.res.dandyweng.com/images/patterns/white_wall_hash.png");
+    padding: 10em 0 10em 0;
+}
+
+#contact {
+    background-image: url("http://v5.res.dandyweng.com/images/patterns/snow.png");
+}
+#contact #separator {
+    background-image: url("http://v5.res.dandyweng.com/images/backgrounds/more.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 10em 0 10em 0;
+}
+#contact #container {
+    background-image: url("http://v5.res.dandyweng.com/images/overlay.png");
+    padding: 10em 0 10em 0;
+}
+
+#footer {
+    background-image: url("http://v5.res.dandyweng.com/images/patterns/concrete_wall.png");
+    padding: 10em 0 10em 0;
+}
+
+.cover {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    display: none;
+}
+
+#lightbox {
+    background-color: gray;
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+#lightbox #imgloding {
+    width: auto;
+    height: auto;
+    z-index: 6;
+    opacity: 1;
+}
+#lightbox #imgloding #toleft {
+    position: absolute;
+    height: 10%;
+    width: auto;
+    top: 45%;
+    left: 3%;
+    z-index: 7;
+}
+#lightbox #imgloding #toright {
+    position: absolute;
+    height: 10%;
+    width: auto;
+    top: 45%;
+    right: 3%;
+    z-index: 7;
+}
+#lightbox #imgloding img {
+    width: auto;
+    height: auto;
+}
+
+#loading {
+    background-color: whitesmoke;
+}
+#loading #lodingbar1 {
+    position: relative;
+    text-align: center;
+    padding: auto;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: solid lightgrey 2px;
+    background-color: gray;
+}
+#loading #lodingbar1 #loadingbar2 {
+    padding: auto;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    left: 12.5px;
+    top: 12.5px;
+    border-radius: 100%;
+    border-bottom: solid lightgray 2px;
+    animation: rotate 1s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="mycanvas" ></canvas>
+</body>
+<script>
+    var mycanvas = document.getElementById("mycanvas");
+    mycanvas.width=getViewport().width;
+    mycanvas.height=getViewport().height;
+    var ctx = mycanvas.getContext("2d");
+    function addEvent(obj,event,fuc){
+        if(obj.addEventListener){
+            obj.addEventListener(event,fuc);
+        }
+        else if(obj.attachEvent){
+            obj.attachEvent("on"+event,function(event){
+                //使作用域指向obj(事件对象)
+                return fuc.call(obj,event);
+            });
+        }
+    }
+    var Arrow = function(context,x,y,rotation){
+        if(!x) x = 100;
+        if(!y) y = 100;
+        if(!rotation) rotation = 0;
+        this.context = context;
+        this.x = x;
+        this.y = y;
+        this.rotation = rotation;
+        this.init();
+    };
+    Arrow.prototype.init = function(){
+        this.context.translate(this.x,this.y);
+        this.context.rotate(this.rotation*Math.PI/180);
+        this.context.beginPath();
+        this.context.moveTo(-50,-25);
+        this.context.lineTo(0,-25);
+        this.context.lineTo(0,-50);
+        this.context.lineTo(50,0);
+        this.context.lineTo(0,50);
+        this.context.lineTo(0,25);
+        this.context.lineTo(-50,25);
+        this.context.lineTo(-50,-25);
+        this.context.stroke();
+        this.context.rotate(-this.rotation*Math.PI/180);
+        this.context.translate(-this.x,-this.y);	//坐标转换必须为旋转回去之后
+    }
+    Arrow.prototype.rotate = function(angle){
+        this.clear();
+        this.rotation = angle;
+        this.init();
+    }
+    Arrow.prototype.clear = function(){
+        this.context.clearRect(this.x-130,this.y-130,260,260);
+    }
+    var arrow = new Arrow(ctx,mycanvas.width/2,mycanvas.height/2,-30);
+    addEvent(mycanvas,"mousemove",function(e){
+        arrow.rotate(
+                Math.atan2(e.clientY-arrow.y,e.clientX-arrow.x)*180/Math.PI);
+        //要是使用Math.atan函数，那么鼠标在第一、第三象限一样，第二、第四象限一样
+        //Math.atan((e.clientY-arrow.y)/(e.clientX-arrow.x))*180/Math.PI);
+    });
+    function getViewport(){
+        if (document.compatMode == "BackCompat"){
+            return {
+                width: document.body.clientWidth,
+                height: document.body.clientHeight
+            }
+        } else {
+            return {
+                width: document.documentElement.clientWidth,
+                height: document.documentElement.clientHeight
+            }
+        }
+    }
+</script>
+</html>
