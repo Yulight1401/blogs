@@ -4,23 +4,20 @@
 //获取所有section元素，根据element.getBoundingClientRect().top<10% 执行入场动画,bottom<10% 执行出场动画;所以要监听pc滑轮滚动和移动touch事件
     //根据移动,pc来执行不同初始化任务.
     // 动画以class来管理
-var $=function (id) {
-    return document.getElementById(id);
-}
-class ys{
+class yul_slider{
     constructor(aniIn,aniOut){
-        let allsections=$("yulslider").children;
         let t=document.documentElement.scrollTop||document.body.scrollTop;
-        let aniIn=aniIn;
-        let aniOut=aniOut;
+        this.aniIn=aniIn;
+        this.aniOut=aniOut;
         this.setSectionshw();
     }
     setSectionshw(){
         let winHeight=window.innerHeight;
         let winWidth=window.innerWidth;
-        for(let i=0;i<this.allsections.length;i++){
-            this.allsections[i].height=winHeight;
-            this.allsections[i].width=winWidth;
+        let allsections= document.getElementById("yulslider").children;
+        for(let i=0;i<allsections.length;i++){
+            allsections[i].style.height=winHeight+"px";
+            allsections[i].style.width=winWidth+"px";
         }
     }
     listenTouch(){
@@ -61,4 +58,4 @@ class ys{
 
     }
 }
-export  {ys as yul_slider};
+export  default  yul_slider;
