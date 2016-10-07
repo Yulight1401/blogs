@@ -6,4 +6,6 @@
 (3).选择框状态，当span状态机激活时，选择框也会被激活，同时监听window的keyup事件，来选择和输入.span暂停或者完成时，停止监听，隐藏.
 
 ####后一天
-添加了动画资源，整体成型，同时我将把我的后端node代码上传到库中，[前往demo](http://yulstudio.cn/lab/index.html);
+>添加了动画资源，整体成型，同时我将把我的后端node代码上传到库中，[前往demo](http://yulstudio.cn/lab/index.html);[前往git](https://github.com/Yulight1401/blogs/edit/master);
+>同时有手机对应页面，手机滑动切换页面的原理是，顶层覆盖视窗并且overflow:hidden,然后内容的height很长，不过可以让通过transform:translate来上下移动页面，并且通过transition来添加切换动画。
+>新浪输入框按照以前的设计思想正在编写中.
