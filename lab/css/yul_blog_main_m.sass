@@ -1,0 +1,703 @@
+#main-container
+  overflow: hidden
+  margin: 0 auto
+  backface-visibility: hidden
+  z-index: 1
+  width: 100%
+  height: 100%
+  position: relative
+
+$section12bg:"http://v5.res.dandyweng.com/images/backgrounds/intro.jpg"
+$section12bg2:"http://v5.res.dandyweng.com/images/overlay-lba-x2.png"
+$section12bg3:"http://v5.res.dandyweng.com/images/backgrounds/homeschool.jpg"
+$section3bgwb:"http://v5.res.dandyweng.com/images/patterns/stardust.webp"
+$section3bg:"http://v5.res.dandyweng.com/images/patterns/stardust.png"
+$section4bgwb:"http://v5.res.dandyweng.com/images/patterns/crossword.webp"
+$section4bg:"http://v5.res.dandyweng.com/images/patterns/crossword.png"
+$section5bgwb:"http://v5.res.dandyweng.com/images/backgrounds/design.webp"
+$section5bg:"http://v5.res.dandyweng.com/images/backgrounds/design.jpg"
+$section6bgwb:"http://v5.res.dandyweng.com/images/patterns/white_wall_hash.webp"
+$section6bg:"http://v5.res.dandyweng.com/images/patterns/white_wall_hash.png"
+$section7bgwb:"http://v5.res.dandyweng.com/images/patterns/snow.webp"
+$section7bg:"http://v5.res.dandyweng.com/images/patterns/snow.png"
+$contactbg1wb:"http://v5.res.dandyweng.com/images/backgrounds/more.webp"
+$contactbg1:"http://v5.res.dandyweng.com/images/backgrounds/more.jpg"
+$contactbg2:"http://v5.res.dandyweng.com/images/overlay.png"
+$speechbgwb:"http://v5.res.dandyweng.com/images/backgrounds/speech.webp"
+$speechbg:"http://v5.res.dandyweng.com/images/backgrounds/speech.jpg"
+$footerbgwb:"http://v5.res.dandyweng.com/images/patterns/concrete_wall.webp"
+$footerbg:"http://v5.res.dandyweng.com/images/patterns/concrete_wall.png"
+$logoimg:"http://v5.res.dandyweng.com/images/portaits/square.jpg"
+
+body
+  margin: 0 auto
+
+a
+  color: #475f85
+  letter-spacing: .5px
+  text-decoration: none
+  -webkit-transition: color .2s ease-in-out
+  -moz-transition: color .2s ease-in-out
+  -ms-transition: olor .2s ease-in-out
+  -o-transition: color .2s ease-in-out
+  transition: color .2s ease-in-out
+p
+  margin-bottom: 1.5rem
+  cursor: default
+header
+  margin-bottom: 23px
+  display: block
+  p
+    display: block
+    margin: 1rem 0 0 0
+    padding: 0 0 .5rem 0
+h1,h2
+  font-weight: normal
+  font-size: 2em
+  letter-spacing: -1px
+  line-height: 1.3
+  cursor: default
+section
+  position: relative
+ul,ol
+  list-style: none
+
+.container
+  margin-left: auto
+  margin-right: auto
+  width: 90%
+
+button
+  position: relative
+  background-color: #a55f67
+  border: 0
+  border-radius: 8px
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  height: 3.5em
+  font-size: 16px
+  font-size: 1.6rem
+  line-height: 3.5em
+  outline: 0
+  padding: 0 5em 0 5em
+  margin-bottom: 2em !important
+  box-shadow: 0 1px 8px 1px rgba(0,0,0,0.3)
+  text-shadow: 0 1px 1px rgba(255,255,255,0.3)
+  text-align: center
+  text-decoration: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  -o-appearance: none
+  appearance: none
+  -webkit-transition: all .2s ease-in-out
+  -moz-transition: all .2s ease-in-out
+  -ms-transition: all .2s ease-in-out
+  -o-transition: all .2s ease-in-out
+  transition: all .2s ease-in-out
+
+  h2
+    position: relative !important
+    font-size: 28px
+    font-size: 2.8rem
+    line-height: 0
+    letter-spacing: 0
+    margin-top: 50px
+#intro
+  background-image: url($section12bg)
+  background-attachment: fixed
+  background-size: cover
+  background-position: bottom center
+  background-repeat: no-repeat
+  text-align: center
+  color: #ffffff
+  overflow: hidden
+  .content
+    margin-bottom: 180px
+    padding-top: 10%
+  header
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2)
+    p
+      position: relative !important
+      font-size: 20px
+      font-size: 2rem
+      line-height: 1.6
+      margin-top: 1.2em
+
+  #logo
+    width: 100px
+    height: 100px
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5),0px 2px 18px 3px rgba(0,0,0,0.2)
+    background-color: rgba(255,255,255,0.3)
+    border-radius: 100%
+    margin: auto
+    overflow: hidden
+    #org
+      position: relative
+      width: 100%
+      height: 100%
+      z-index: 1
+      overflow: hidden
+      #orgimg
+        background-image: url($logoimg)
+        border-radius: 100%
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        width: 100px
+        height: 100px
+        position: relative
+
+      #orgshadow
+
+      #flip
+        position: relative
+        width: 100%
+        height: 100%
+        z-index: 3
+
+        #flipimg
+          background-image: url($logoimg)
+          background-repeat: no-repeat
+          background-position: center
+          background-size: cover
+          border-radius: 100%
+          transform: translate(-200px,0)
+          opacity: .8
+          width: 100%
+          height: 100%
+
+        #flipshadow
+
+
+
+#homeschool
+  background-image: url($section12bg2),url($section12bg)
+  background-size: cover,cover
+  background-position: top left,bottom center
+  background-attachment: fixed,fixed
+  background-repeat: no-repeat
+  text-align: left
+  overflow: hidden
+  border-top: 1px solid rgba(255,255,255,0.05)
+  color: #fff
+  .content
+    padding: 5%
+    width: 90%
+    left: 10%
+
+#travel
+  background-image: url($section3bg)
+  background-color: #464646
+  background-size: 399px
+  overflow: hidden
+  color: #fff
+  .content
+    padding: 3.5em 2.5em 3.5em 2.5em
+    text-shadow: 0 2px 3px rgba(0,0,0,0.3)
+    left: 12%
+    width: 35%
+  #map
+    position: absolute
+    width: 50%
+    height: 50%
+    top: 47%
+    right: 5%
+
+#photography
+  background-image: url($section4bg)
+  background-size: 400px
+  text-align: center
+  header
+    margin-top: 30px
+    margin-bottom: 30px
+  #montage
+    height: 248px
+    overflow-y: hidden
+    img
+      display: block
+      padding-top: 5px
+      padding-bottom: 5px
+      width: 100%
+      border-radius: 2px
+      position: relative
+      display: inline-block
+      width: 180px
+      margin-left: 5px
+      margin-bottom: -5px
+      -webkit-transform-style: preserve-3d
+  #montage-controller
+    width: 800px
+    margin: 30px auto 40px
+    overflow: visible
+    font-size: 16px
+    font-size: 1.6rem
+
+
+#design
+  background-image: url($section5bg)
+  background-attachment: fixed
+  background-size: cover
+  background-position: bottom center
+  background-repeat: no-repeat
+  text-align: center
+  color: #ffffff
+  overflow: hidden
+  .content
+    position: relative
+    margin: 0
+    text-shadow: 0 2px 3px rgba(0,0,0,0.5),0 1px 18px rgba(0,0,0,0.5)
+    left: 48%
+    width: 50%
+    padding: 2em
+    transform: translate(-50px,0)
+
+  #showcase
+    position: absolute
+    width: 40%
+    top: 35%
+    margin-left: -5px
+    padding-left: 10%
+    width: 45%
+    top: 30%
+    padding-left: 5%
+    .top
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      border-color: rgba(255,255,255,0.5) rgba(255,255,255,0.35) rgba(255,255,255,0)
+    .bottom
+      border-bottom-left-radius: 5px
+      border-bottom-right-radius: 5px
+      border-color: rgba(255,255,255,0) rgba(255,255,255,0.35) rgba(255,255,255,0.6)
+      padding-top: 8px
+    .hu
+      width: 50%
+      clear: none
+      margin-left: 0
+      float: left
+    img
+      width: 100%
+      box-shadow: 0 2px 3px rgba(0,0,0,0.5),0 1px 18px rgba(0,0,0,0.5)
+      border: 3px solid #fff
+      border-radius: 5px
+      cursor: pointer
+      -webkit-filter: sepia(60%)
+      -webkit-transition: all .3s ease
+      -moz-transition: all .3s ease
+      -o-transition: all .3s ease
+      -ms-transition: all .3s ease
+      transition: all .3s ease
+    figure
+      position: relative
+      margin-bottom: -10px
+      width: 50%
+      float: left
+      clear: none
+      margin-left: 0
+      opacity: .9
+      -webkit-transition: all .5s ease
+      -moz-transition: all .5s ease
+      -o-transition: all .5s ease
+      -ms-transition: all .5s ease
+      transition: all .5s ease
+    figcaption
+      line-height: 1.5
+      padding: 10px
+      opacity: 0
+      position: fixed
+      font-size: 14px
+      line-height: 1.8
+      background: rgba(0,0,0,.5)
+      padding: 20px
+      pointer-events: none
+      box-shadow: 0 0 20px 1px rgba(0,0,0,0.4)
+      border: 1px solid
+      -webkit-transition: all .6s ease
+      -moz-transition: all .6s ease
+      -o-transition: all .6s ease
+      -ms-transition: all .6s ease
+      transition: all .6s ease
+
+
+
+#speech
+  position: relative
+  background-image: url($section6bg)
+  background-size: 500px
+  overflow: visible
+  padding-right: 2em
+  #lectures
+    position: absolute
+    bottom: 12%
+    height: 180px
+    width: 100%
+    #lectures-inner
+      height: 180px
+      overflow-x: scroll
+      white-space: nowrap
+      overflow: hidden
+      outline: none
+      cursor: -webkit-grab
+      article
+        position: relative
+        display: inline-block
+        vertical-align: text-top
+        height: 135px
+        margin-left: 80px
+        padding-top: 10px
+        padding-right: 20px
+        border: 1px solid #ddd
+        border-radius: 5px
+        color: #666
+        cursor: default
+        box-shadow: 0 3px 15px 0 rgba(0,0,0,0.1)
+        background-color: #fcfcfc
+        background-image: url("http://v5.res.dandyweng.com/images/patterns/crossword.jpg")
+        background-size: 400px
+        p
+          max-width: 45em
+          font-size: 13px
+          white-space: normal
+          line-height: 1.5
+          padding-left: 155px
+        i
+          position: absolute
+          width: 135px
+          top: 32px
+          color: #fff
+          z-index: 999
+          font-size: 26px
+          font-size: 2.6rem
+          text-align: center
+          text-shadow: 0 2px 8px rgba(0,0,0,0.3),0 2px 28px rgba(0,0,0,0.8)
+          opacity: 0
+          -webkit-transition: all .8s ease
+          -moz-transition: all .8s ease
+          -o-transition: all .8s ease
+          -ms-transition: all .8s ease
+          transition: all .8s ease
+        header
+          margin-bottom: 2px
+          padding-left: 155px
+          h3
+            display: inline
+            font-size: 1.4rem
+          h4
+            display: inline
+            font-size: 1.4rem
+          p
+            display: inline
+            font-size: 1.2rem
+        img
+          position: absolute
+          top: -1px
+          left: -1px
+          max-width: 135px
+          margin-right: 1em
+          border-top-left-radius: 5px
+          border-bottom-left-radius: 5px
+          -webkit-transition: all .8s ease
+          -moz-transition: all .8s ease
+          -o-transition: all .8s ease
+          -ms-transition: all .8s ease
+          transition: all .8s ease
+    .controller
+      position: absolute
+      width: 160px
+      height: 140px
+      top: 3px
+      cursor: pointer
+      z-index: 99999
+      .controller.left
+        display: block
+        left: 0
+        text-align: left
+        background: -webkit-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: -moz-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: -o-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: -ms-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: linear-gradient(to right,#fff 0,rgba(255,255,255,0.65) 50%,rgba(255,255,255,0) 100%)
+      .controller.right
+        display: block
+        right: 0
+        text-align: right
+        background: -webkit-linear-gradient(left,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: -moz-linear-gradient(left,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: -o-linear-gradient(left,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: -ms-linear-gradient(left,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
+        background: linear-gradient(to left,#fff 0,rgba(255,255,255,0.65) 50%,rgba(255,255,255,0) 100%)
+  .content
+    width: 40%
+    left: 1%
+    padding: 0 3em 5em 2em
+    -webkit-transform: translateY(-25%)
+    -moz-transform: translateY(-25%)
+    -ms-transform: translateY(-25%)
+    -o-transform: translateY(-25%)
+    transform: translateY(-25%)
+  #window
+    width: 61.8%
+    background: url($contactbg2),url($speechbg)
+    height: 61.8%
+    right: 0
+    top: 0
+    position: absolute
+    background-attachment: fixed
+    border: 1px solid
+    border-color: rgba(255,255,255,0.15) rgba(255,255,255,0.6) rgba(255,255,255,0.8)
+    border-right: 0
+    border-bottom-left-radius: 999px
+    box-shadow: 0 3px 60px 0 rgba(0,0,0,0.1)
+    #player
+      position: absolute
+      right: 10%
+      height: 75%
+      width: 60%
+      background: rgba(0,0,0,0.5)
+      opacity: 1
+      box-shadow: 0 1px 8px 1.5px rgba(0,0,0,0.35),0px 20px 70px 8px rgba(0,0,0,0.35)
+      -webkit-transition: all 1.5s ease
+      -moz-transition: all 1.5s ease
+      -o-transition: all 1.5s ease
+      -ms-transition: all 1.5s ease
+      transition: all 1.5s ease
+      display: none
+
+#contact
+  background-image: url($section7bg)
+  #separator
+    background-image: url($contactbg1)
+    background-attachment: fixed
+    background-size: cover
+    background-position: bottom center
+    background-repeat: no-repeat
+    text-align: center
+    color: #ffffff
+    overflow: hidden
+    a
+      color: white
+    ul
+      padding-top: 10px
+    li
+      display: inline-block
+      margin: 18px
+      -webkit-transition: opacity 1s,transform 1.5s ease
+      -moz-transition: opacity 1s,transform 1.5s ease
+      -ms-transition: opacity 1s,transform 1.5s ease
+      -o-transition: opacity 1s,transform 1.5s ease
+      transition: opacity 1s,transform 1.5s ease
+    i
+      font-size: 2em
+      text-shadow: 0 5px 38px rgba(0,0,0,0.35)
+  #container
+    background-image: url($contactbg2)
+    padding: 10% 0 10% 0
+  #comment
+    position: relative
+    width: 75%
+    margin: 65px auto 0
+    background-color: #fff
+    background-image: url("http://v5.res.dandyweng.com/images/patterns/envelope-border.png"),url("http://v5.res.dandyweng.com/images/patterns/light_wool.jpg")
+    background-size: 180px,190px 191px
+    padding: 13px
+    padding-bottom: 0
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+    box-shadow: 0 1px 8px 1px rgba(0,0,0,0.15),0px 20px 80px 0 rgba(0,0,0,0.2)
+    form
+      background-image: url("http://v5.res.dandyweng.com/images/patterns/light_wool.webp")
+      background-size: 190px 191px
+      background-color: #fff
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      padding: 1em
+      -webkit-transition: all .8s ease
+      -moz-transition: all .8s ease
+      -o-transition: all .8s ease
+      -ms-transition: all .8s ease
+      transition: all .8s ease
+      p
+        font-size: 1.4rem
+        line-height: 1.8
+        color: #666
+        color: rgba(0,0,0,0.6)
+      .row
+        border-bottom: solid 1px transparent
+      .row.uniform
+        margin: -40px 0 -1px -40px
+      .fu
+        padding: 40px 0 0 40px
+        width: 85%
+        clear: none
+        margin-left: 0
+      .hu
+        padding: 40px 0 0 40px
+        width: 50%
+        clear: none
+        margin-left: 0
+      input
+        display: block
+        width: 100%
+        padding: .5em
+        font-size: 20px
+        background-color: #fff
+        background-color: rgba(255,255,255,0.5)
+        color: #666
+        color: rgba(0,0,0,0.6)
+        border: solid 2px #dbbfc3
+        border-radius: .5em
+        outline: 0
+        -webkit-appearance: none
+        -moz-appearance: none
+        -o-appearance: none
+        -ms-appearance: none
+        appearance: none
+        -webkit-transition: color .2s ease-in-out
+        -moz-transition: color .2s ease-in-out
+        -o-transition: color .2s ease-in-out
+        -ms-transition: color .2s ease-in-out
+        transition: color .2s ease-in-out
+      textarea
+        min-height: 200px
+        padding-top: 1em
+        display: block
+        width: 100%
+        padding: .5em
+        font-size: 20px
+        background-color: #fff
+        background-color: rgba(255,255,255,0.5)
+        color: #666
+        color: rgba(0,0,0,0.6)
+        border: solid 2px #dbbfc3
+        border-radius: .5em
+        outline: 0
+        -webkit-appearance: none
+        -moz-appearance: none
+        -o-appearance: none
+        -ms-appearance: none
+        appearance: none
+        -webkit-transition: color .2s ease-in-out
+        -moz-transition: color .2s ease-in-out
+        -o-transition: color .2s ease-in-out
+        -ms-transition: color .2s ease-in-out
+        transition: color .2s ease-in-out
+
+#footer
+  background-image: url($footerbg)
+  position: relative
+  margin: 0
+  color: #aaa
+  color: rgba(255,255,255,0.55)
+  padding: 1.5em
+  .container
+    position: relative
+    margin-top: 20px
+    margin-bottom: 30px
+
+
+#instructions
+  display: none
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,0.7)
+  border-radius: 8px
+  z-index: 99999
+  margin-left: 40px
+  padding-right: 60px
+  box-shadow: 0 3px 8px 2px rgba(0,0,0,0.3),0px 10px 70px 8px rgba(0,0,0,0.3)
+  background-image: url("http://v5.res.dandyweng.com/images/overlay.png"),url("http://v5.res.dandyweng.com/images/patterns/concrete_wall.jpg")
+  background-color: rgba(0,0,0,0.7)
+  opacity: .95
+  text-align: center
+  line-height: 1.5
+  overflow: hidden
+.cover
+  position: absolute
+  z-index: 5
+  width: 100%
+  height: 100%
+  opacity: .7
+  display: none
+
+#lightbox
+  background-color: gray
+  color: white
+  font-size: x-large
+  font-size: xx-large
+  #imgloding
+    position: fixed
+    text-align: center
+    width: auto
+    height: auto
+    top: 50%
+    left: 50%
+    z-index: 6
+    opacity: 1
+    #toleft
+      position: relative
+      height: 25%
+      width: 50px
+      left: -5%
+      z-index: 9999
+    #toright
+      position: relative
+      height: 25%
+      width: 50px
+      right: -5%
+      z-index: 9999
+    img
+      width: auto
+      height: auto
+      max-width: 90%
+      max-height: 90%
+
+
+
+#loading
+  background-color: whitesmoke
+  #lodingbar1
+    position: relative
+    text-align: center
+    padding: auto
+    top: 50%
+    left: 50%
+    margin-left: -25px
+    margin-top: -25px
+    width: 50px
+    height: 50px
+    border-radius: 100%
+    border: solid lightgrey 2px
+    background-color: gray
+
+    #loadingbar2
+      padding: auto
+      position: relative
+      width: 25px
+      height: 25px
+      left: 12.5px
+      top: 12.5px
+      border-radius: 100%
+      border-bottom: solid lightgray 2px
+      animation: rotate 1s linear infinite
+
+
+@mixin keyframes($animationName)
+  @-webkit-keyframes #{$animationName}
+    @content
+
+  @-moz-keyframes #{$animationName}
+    @content
+
+  @-o-keyframes #{$animationName}
+    @content
+
+  @keyframes #{$animationName}
+    @content
+
+@include keyframes(rotate)
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

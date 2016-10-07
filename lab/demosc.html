@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>图片横向滚动代码</title>
+    <!-----------图片Block的样式-------------->
+    <style type="text/css">
+        .box{ margin:0 auto; height:70px; width:810px; padding:10px; border:1px solid #FF0000; }
+        .box img{ margin-right:20px;}
+        #goleft {width: 800px;height: 70px;overflow: hidden;}
+        #goleft #gols {width: 33100px;}
+        #goleft1, #goleft2 {width: auto;float: left;}
+    </style>
+
+</head>
+<body>
+<!-----------图片横向滚动Block-------------->
+<div class="box">
+    <div id="goleft">
+        <div id="gols">
+            <div id="goleft1">
+                <a href="" ><img src="http://image.cnicif.com/big/2013/5/14/jpg20130514011700784.jpg" alt="6" width="100" height="70" /></a>
+                <a href="" ><img src="http://image.cnicif.com/big/2013/5/14/jpg20130514011612885.jpg" alt="5" width="100" height="70" /></a>
+                <a href="" ><img src="http://image.cnicif.com/big/2013/5/14/jpg20130514011552639.jpg" alt="4" width="100" height="70" /></a>
+                <a href="" ><img src="http://image.cnicif.com/big/2013/5/14/jpg20130514011502241.jpg" alt="3" width="100" height="70" /></a>
+                <a href="" ><img src="http://image.cnicif.com/big/2013/5/14/jpg20130514011344231.jpg" alt="2" width="100" height="70" /></a>
+                <a href="" ><img src="http://image.cnicif.com/big/2013/5/14/jpg20130514011113601.jpg" alt="1" width="100" height="70" /></a>
+            </div>
+            <div id="goleft2"></div>
+        </div>
+    </div>
+</div>
+<!-----------图片滚动结束-------------->
+<script type="text/javascript">
+    //图片滚动JS代码
+    var speed2=20;
+    var FGgoleft=document.getElementById('goleft');
+    var FGgoleft1=document.getElementById('goleft1');
+    var FGgoleft2=document.getElementById('goleft2');
+    FGgoleft2.innerHTML=FGgoleft1.innerHTML
+    function Marquee2(){
+        if(FGgoleft2.offsetWidth-FGgoleft.scrollLeft<=0)
+        {
+            FGgoleft.scrollLeft-=FGgoleft1.offsetWidth
+        }
+        else{
+            FGgoleft.scrollLeft++;
+        }
+    }
+    var MyMar2=setInterval(Marquee2,speed2)
+    FGgoleft.onmouseover=function() { clearInterval(MyMar2) }
+    FGgoleft.onmouseout=function() { MyMar2=setInterval(Marquee2,speed2) }
+</script>
+</body>
+</html>

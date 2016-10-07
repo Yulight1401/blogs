@@ -13,7 +13,11 @@ class  yul_lightbox{
         console.log(imgs[0].src);
         var lb=this;
         lightbox.addEventListener("click",function () {
-            lightbox.style.display="none";
+            lightbox.className="animated fadeOut";
+            setTimeout(function () {
+                lightbox.className="";
+                lightbox.style.display="none";
+            },1000)
         })
         for(var i=0;i<max;i++){
             imgs[i].addEventListener("click",function () {
@@ -54,11 +58,12 @@ class  yul_lightbox{
         let right=document.getElementById("toright");
         let left=document.getElementById("toleft");
         this.index=i;
-        lightbox.style.display="block";
         let winw=window.innerWidth;
         let winh=window.innerHeight;
-        img.src=src;
         document.getElementById("loading").style.display="block";
+        img.src=src;
+        lightbox.className="animated fadeIn";
+        lightbox.style.display="block";
         img.onload=function () {
             document.getElementById("loading").style.display="none";
             if(img.clientWidth>(this.winw*0.8)){

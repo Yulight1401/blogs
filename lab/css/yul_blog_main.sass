@@ -22,6 +22,16 @@ $logoimg:"http://v5.res.dandyweng.com/images/portaits/square.jpg"
 
 body
   margin: 0 auto
+
+a
+  color: #475f85
+  letter-spacing: .5px
+  text-decoration: none
+  -webkit-transition: color .2s ease-in-out
+  -moz-transition: color .2s ease-in-out
+  -ms-transition: olor .2s ease-in-out
+  -o-transition: color .2s ease-in-out
+  transition: color .2s ease-in-out
 p
   margin-bottom: 1.5rem
   cursor: default
@@ -67,6 +77,35 @@ a.angle
   margin-right: auto
   width: 90%
 
+button
+  position: relative
+  background-color: #a55f67
+  border: 0
+  border-radius: 8px
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  height: 3.5em
+  font-size: 16px
+  font-size: 1.6rem
+  line-height: 3.5em
+  outline: 0
+  padding: 0 5em 0 5em
+  margin-bottom: 2em !important
+  box-shadow: 0 1px 8px 1px rgba(0,0,0,0.3)
+  text-shadow: 0 1px 1px rgba(255,255,255,0.3)
+  text-align: center
+  text-decoration: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  -o-appearance: none
+  appearance: none
+  -webkit-transition: all .2s ease-in-out
+  -moz-transition: all .2s ease-in-out
+  -ms-transition: all .2s ease-in-out
+  -o-transition: all .2s ease-in-out
+  transition: all .2s ease-in-out
 
   h2
     position: relative !important
@@ -148,7 +187,7 @@ a.angle
   background-position: top left,bottom center
   background-attachment: fixed,fixed
   background-repeat: no-repeat
-  text-align: center
+  text-align: left
   overflow: hidden
   border-top: 1px solid rgba(255,255,255,0.05)
   color: #fff
@@ -196,18 +235,22 @@ a.angle
   background-size: 400px
   text-align: center
   header
-    margin-top: -40px
+    margin-top: 30px
     margin-bottom: 30px
   #montage
     height: 248px
     overflow-y: hidden
-    a
+    img
+      display: block
+      padding-top: 5px
+      padding-bottom: 5px
+      width: 100%
+      border-radius: 2px
       position: relative
       display: inline-block
       width: 180px
       margin-left: 5px
       margin-bottom: -5px
-      -webkit-perspective: 1000
       -webkit-transform-style: preserve-3d
   #montage-controller
     width: 800px
@@ -233,6 +276,7 @@ a.angle
     left: 48%
     width: 50%
     padding: 2em
+    transform: translate(-50px,0)
 
   #showcase
     position: absolute
@@ -243,6 +287,20 @@ a.angle
     width: 45%
     top: 30%
     padding-left: 5%
+    .top
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      border-color: rgba(255,255,255,0.5) rgba(255,255,255,0.35) rgba(255,255,255,0)
+    .bottom
+      border-bottom-left-radius: 5px
+      border-bottom-right-radius: 5px
+      border-color: rgba(255,255,255,0) rgba(255,255,255,0.35) rgba(255,255,255,0.6)
+      padding-top: 8px
+    .hu
+      width: 50%
+      clear: none
+      margin-left: 0
+      float: left
     img
       width: 100%
       box-shadow: 0 2px 3px rgba(0,0,0,0.5),0 1px 18px rgba(0,0,0,0.5)
@@ -285,19 +343,11 @@ a.angle
       -o-transition: all .6s ease
       -ms-transition: all .6s ease
       transition: all .6s ease
-    .top figcaption
-      border-top-left-radius: 5px
-      border-top-right-radius: 5px
-      border-color: rgba(255,255,255,0.5) rgba(255,255,255,0.35) rgba(255,255,255,0)
-    .bottom figcaption
-      border-bottom-left-radius: 5px
-      border-bottom-right-radius: 5px
-      border-color: rgba(255,255,255,0) rgba(255,255,255,0.35) rgba(255,255,255,0.6)
-      padding-top: 8px
 
 
 
 #speech
+  position: relative
   background-image: url($section6bg)
   background-size: 500px
   overflow: visible
@@ -311,6 +361,9 @@ a.angle
       height: 180px
       overflow-x: scroll
       white-space: nowrap
+      overflow: hidden
+      outline: none
+      cursor: -webkit-grab
       article
         position: relative
         display: inline-block
@@ -327,6 +380,53 @@ a.angle
         background-color: #fcfcfc
         background-image: url("http://v5.res.dandyweng.com/images/patterns/crossword.jpg")
         background-size: 400px
+        p
+          max-width: 45em
+          font-size: 13px
+          white-space: normal
+          line-height: 1.5
+          padding-left: 155px
+        i
+          position: absolute
+          width: 135px
+          top: 32px
+          color: #fff
+          z-index: 999
+          font-size: 26px
+          font-size: 2.6rem
+          text-align: center
+          text-shadow: 0 2px 8px rgba(0,0,0,0.3),0 2px 28px rgba(0,0,0,0.8)
+          opacity: 0
+          -webkit-transition: all .8s ease
+          -moz-transition: all .8s ease
+          -o-transition: all .8s ease
+          -ms-transition: all .8s ease
+          transition: all .8s ease
+        header
+          margin-bottom: 2px
+          padding-left: 155px
+          h3
+            display: inline
+            font-size: 1.4rem
+          h4
+            display: inline
+            font-size: 1.4rem
+          p
+            display: inline
+            font-size: 1.2rem
+        img
+          position: absolute
+          top: -1px
+          left: -1px
+          max-width: 135px
+          margin-right: 1em
+          border-top-left-radius: 5px
+          border-bottom-left-radius: 5px
+          -webkit-transition: all .8s ease
+          -moz-transition: all .8s ease
+          -o-transition: all .8s ease
+          -ms-transition: all .8s ease
+          transition: all .8s ease
     .controller
       position: absolute
       width: 160px
@@ -334,8 +434,8 @@ a.angle
       top: 3px
       cursor: pointer
       z-index: 99999
-      .left
-        display: none
+      .controller.left
+        display: block
         left: 0
         text-align: left
         background: -webkit-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
@@ -343,8 +443,8 @@ a.angle
         background: -o-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
         background: -ms-linear-gradient(right,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
         background: linear-gradient(to right,#fff 0,rgba(255,255,255,0.65) 50%,rgba(255,255,255,0) 100%)
-      .right
-        display: none
+      .controller.right
+        display: block
         right: 0
         text-align: right
         background: -webkit-linear-gradient(left,#fff 0,rgba(255,255,255,0.65) 30%,rgba(255,255,255,0) 100%)
@@ -400,14 +500,27 @@ a.angle
     text-align: center
     color: #ffffff
     overflow: hidden
+    a
+      color: white
     ul
       padding-top: 10px
+    li
+      display: inline-block
+      margin: 18px
+      -webkit-transition: opacity 1s,transform 1.5s ease
+      -moz-transition: opacity 1s,transform 1.5s ease
+      -ms-transition: opacity 1s,transform 1.5s ease
+      -o-transition: opacity 1s,transform 1.5s ease
+      transition: opacity 1s,transform 1.5s ease
+    i
+      font-size: 2em
+      text-shadow: 0 5px 38px rgba(0,0,0,0.35)
   #container
     background-image: url($contactbg2)
     padding: 10% 0 10% 0
   #comment
     position: relative
-    width: 50%
+    width: 75%
     margin: 65px auto 0
     background-color: #fff
     background-image: url("http://v5.res.dandyweng.com/images/patterns/envelope-border.png"),url("http://v5.res.dandyweng.com/images/patterns/light_wool.jpg")
@@ -429,6 +542,71 @@ a.angle
       -o-transition: all .8s ease
       -ms-transition: all .8s ease
       transition: all .8s ease
+      p
+        font-size: 1.4rem
+        line-height: 1.8
+        color: #666
+        color: rgba(0,0,0,0.6)
+      .row
+        border-bottom: solid 1px transparent
+      .row.uniform
+        margin: -40px 0 -1px -40px
+      .fu
+        padding: 40px 0 0 40px
+        width: 85%
+        clear: none
+        margin-left: 0
+      .hu
+        padding: 40px 0 0 40px
+        width: 50%
+        clear: none
+        margin-left: 0
+      input
+        display: block
+        width: 100%
+        padding: .5em
+        font-size: 20px
+        background-color: #fff
+        background-color: rgba(255,255,255,0.5)
+        color: #666
+        color: rgba(0,0,0,0.6)
+        border: solid 2px #dbbfc3
+        border-radius: .5em
+        outline: 0
+        -webkit-appearance: none
+        -moz-appearance: none
+        -o-appearance: none
+        -ms-appearance: none
+        appearance: none
+        -webkit-transition: color .2s ease-in-out
+        -moz-transition: color .2s ease-in-out
+        -o-transition: color .2s ease-in-out
+        -ms-transition: color .2s ease-in-out
+        transition: color .2s ease-in-out
+      textarea
+        min-height: 200px
+        padding-top: 1em
+        display: block
+        width: 100%
+        padding: .5em
+        font-size: 20px
+        background-color: #fff
+        background-color: rgba(255,255,255,0.5)
+        color: #666
+        color: rgba(0,0,0,0.6)
+        border: solid 2px #dbbfc3
+        border-radius: .5em
+        outline: 0
+        -webkit-appearance: none
+        -moz-appearance: none
+        -o-appearance: none
+        -ms-appearance: none
+        appearance: none
+        -webkit-transition: color .2s ease-in-out
+        -moz-transition: color .2s ease-in-out
+        -o-transition: color .2s ease-in-out
+        -ms-transition: color .2s ease-in-out
+        transition: color .2s ease-in-out
 
 #footer
   background-image: url($footerbg)

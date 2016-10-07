@@ -2,11 +2,24 @@ body {
     margin: 0 auto;
 }
 
+a {
+    color: #475f85;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -ms-transition: olor 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
 p {
     margin-bottom: 1.5rem;
     cursor: default;
 }
-
+.fu{
+    width: 100%;
+}
 header {
     margin-bottom: 23px;
     display: block;
@@ -19,8 +32,7 @@ header p {
 
 h1, h2 {
     font-weight: normal;
-    font-size: 50px;
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: -1px;
     line-height: 1.3;
     cursor: default;
@@ -33,12 +45,49 @@ section {
 ul, ol {
     list-style: none;
 }
+path{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear alternate infinite;
+}
 
+@-webkit-keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@-moz-keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@-o-keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
 a.angle {
     position: absolute;
     width: 300px;
     height: 150px;
-    bottom: 0;
+    bottom: -5%;
     margin-left: 50%;
     left: -150px;
     text-align: center;
@@ -58,7 +107,38 @@ a.angle {
     margin-right: auto;
     width: 90%;
 }
-.container h2 {
+
+button {
+    position: relative;
+    background-color: #a55f67;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    height: 3.5em;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 3.5em;
+    outline: 0;
+    padding: 0 5em 0 5em;
+    margin-bottom: 2em !important;
+    box-shadow: 0 1px 8px 1px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+button h2 {
     position: relative !important;
     font-size: 28px;
     font-size: 2.8rem;
@@ -80,6 +160,24 @@ a.angle {
 #intro .content {
     margin-bottom: 180px;
 }
+#intro>ul{
+    width: 20%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: inline-block;
+}
+#intro>ul li{
+    display: inline-block;
+    position: relative;
+    top: 0;
+    right: 10px;
+}
+#intro ul li a{
+    color: #fff;
+    opacity: .6;
+    transition: opacity .5s;
+}
 #intro header {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -89,6 +187,9 @@ a.angle {
     font-size: 2rem;
     line-height: 1.6;
     margin-top: 1.2em;
+}
+#intro #contain{
+    margin-top: 5%;
 }
 #intro #logo {
     width: 100px;
@@ -140,15 +241,55 @@ a.angle {
     background-position: top left, bottom center;
     background-attachment: fixed, fixed;
     background-repeat: no-repeat;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: #fff;
 }
 #homeschool .content {
+    padding: 5% 0 0 5%;
     width: 90%;
     left: 10%;
 }
+@media (max-height: 700px){
+    #life-events {
+        margin-top: -40px;
+        overflow: visible;
+    }
+}
+    @media (max-height: 780px){
+        #life-events {
+            margin-top: -20px;
+            overflow: visible;
+        }
+    }
+
+        @media (max-height: 860px){
+            #life-events {
+                left: -2%;
+                width: 50%;
+            }
+            #life-events {
+                position: absolute;
+                top: 0;
+                left: -2%;
+                width: 40%;
+                height: 100%;
+                opacity: .5;
+                transition: all .8s;
+            }
+            .timeline {
+                padding: 15px 10px;
+            }
+            .timeline {
+                position: relative;
+                overflow: hidden;
+                margin: 0 auto;
+                padding: 20px;
+                max-width: 1200px;
+                list-style: none;
+            }
+        }
 
 #travel {
     background-image: url("http://v5.res.dandyweng.com/images/patterns/stardust.png");
@@ -163,6 +304,25 @@ a.angle {
     left: 12%;
     width: 35%;
 }
+@media (max-width: 1280px){
+    #travel .content {
+        width: 50%;
+        left: 2%;
+    }
+}
+@media (max-width: 1380px) {
+    #travel .content {
+        left: 2%;
+        width: 42%;
+    }
+}
+@media (max-width: 1550px){
+    #travel .content {
+        left: 5% !important;
+        width: 35%;
+    }
+}
+
 #travel #map {
     position: absolute;
     margin-top: -280px;
@@ -170,6 +330,7 @@ a.angle {
     height: 600px;
     top: 47%;
     right: 5%;
+    overflow: visible;
 }
 #travel #trypophobia {
     position: absolute;
@@ -195,20 +356,24 @@ a.angle {
     text-align: center;
 }
 #photography header {
-    margin-top: -40px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 #photography #montage {
     height: 248px;
     overflow-y: hidden;
 }
-#photography #montage a {
+#photography #montage img {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border-radius: 2px;
     position: relative;
     display: inline-block;
     width: 180px;
     margin-left: 5px;
     margin-bottom: -5px;
-    -webkit-perspective: 1000;
     -webkit-transform-style: preserve-3d;
 }
 #photography #montage-controller {
@@ -235,7 +400,7 @@ a.angle {
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5), 0 1px 18px rgba(0, 0, 0, 0.5);
     left: 48%;
     width: 50%;
-    padding: 2em;
+    padding-right: 2em;
 }
 #design #showcase {
     position: absolute;
@@ -246,6 +411,24 @@ a.angle {
     width: 45%;
     top: 30%;
     padding-left: 5%;
+    float: left;
+}
+#design #showcase .top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0);
+}
+#design #showcase .bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.6);
+    padding-top: 8px;
+}
+#design #showcase .hu {
+    width: 35%;
+    clear: none;
+    margin-left: 0;
+    float: left;
 }
 #design #showcase img {
     width: 100%;
@@ -278,6 +461,7 @@ a.angle {
     line-height: 1.5;
     padding: 10px;
     opacity: 0;
+    display: none;
     position: fixed;
     font-size: 14px;
     line-height: 1.8;
@@ -292,19 +476,9 @@ a.angle {
     -ms-transition: all 0.6s ease;
     transition: all 0.6s ease;
 }
-#design #showcase .top figcaption {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0);
-}
-#design #showcase .bottom figcaption {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.6);
-    padding-top: 8px;
-}
 
 #speech {
+    position: relative;
     background-image: url("http://v5.res.dandyweng.com/images/patterns/white_wall_hash.png");
     background-size: 500px;
     overflow: visible;
@@ -320,6 +494,9 @@ a.angle {
     height: 180px;
     overflow-x: scroll;
     white-space: nowrap;
+    overflow: hidden;
+    outline: none;
+    cursor: -webkit-grab;
 }
 #speech #lectures #lectures-inner article {
     position: relative;
@@ -338,6 +515,60 @@ a.angle {
     background-image: url("http://v5.res.dandyweng.com/images/patterns/crossword.jpg");
     background-size: 400px;
 }
+#speech #lectures #lectures-inner article p {
+    max-width: 45em;
+    font-size: 13px;
+    white-space: normal;
+    line-height: 1.5;
+    padding-left: 155px;
+}
+#speech #lectures #lectures-inner article i {
+    position: absolute;
+    width: 135px;
+    top: 32px;
+    color: #fff;
+    z-index: 999;
+    font-size: 26px;
+    font-size: 2.6rem;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 2px 28px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+#speech #lectures #lectures-inner article header {
+    margin-bottom: 2px;
+    padding-left: 155px;
+}
+#speech #lectures #lectures-inner article header h3 {
+    display: inline;
+    font-size: 1.4rem;
+}
+#speech #lectures #lectures-inner article header h4 {
+    display: inline;
+    font-size: 1.4rem;
+}
+#speech #lectures #lectures-inner article header p {
+    display: inline;
+    font-size: 1.2rem;
+}
+#speech #lectures #lectures-inner article img {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    max-width: 135px;
+    margin-right: 1em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
 #speech #lectures .controller {
     position: absolute;
     width: 160px;
@@ -346,8 +577,8 @@ a.angle {
     cursor: pointer;
     z-index: 99999;
 }
-#speech #lectures .controller .left {
-    display: none;
+#speech #lectures  .left {
+    display: block;
     left: 0;
     text-align: left;
     background: -webkit-linear-gradient(right, #fff 0, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0) 100%);
@@ -356,8 +587,8 @@ a.angle {
     background: -ms-linear-gradient(right, #fff 0, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0) 100%);
     background: linear-gradient(to right, #fff 0, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
 }
-#speech #lectures .controller .right {
-    display: none;
+#speech #lectures .right {
+    display: block;
     right: 0;
     text-align: right;
     background: -webkit-linear-gradient(left, #fff 0, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0) 100%);
@@ -366,15 +597,28 @@ a.angle {
     background: -ms-linear-gradient(left, #fff 0, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0) 100%);
     background: linear-gradient(to left, #fff 0, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
 }
+#lectures .controller i {
+    margin: 0 25px;
+    line-height: 140px;
+    color: #aaa;
+    color: rgba(0,0,0,0.35);
+    -webkit-transition: color .5s ease;
+    -moz-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    -ms-transition: color .5s ease;
+    transition: color .5s ease;
+}
 #speech .content {
-    width: 40%;
+    position: absolute;
+    top: 2%;
+    width: 30%;
     left: 1%;
-    padding: 0 3em 5em 2em;
-    -webkit-transform: translateY(-25%);
-    -moz-transform: translateY(-25%);
-    -ms-transform: translateY(-25%);
-    -o-transform: translateY(-25%);
-    transform: translateY(-25%);
+    padding: 0 1em 0 1em;
+}
+@media (max-height: 700px) {
+    #window{
+        height: 50%!important;
+    }
 }
 #speech #window {
     width: 61.8%;
@@ -418,9 +662,26 @@ a.angle {
     text-align: center;
     color: #ffffff;
     overflow: hidden;
+    padding: 10%;
+}
+#contact #separator a {
+    color: white;
 }
 #contact #separator ul {
     padding-top: 10px;
+}
+#contact #separator li {
+    display: inline-block;
+    margin: 18px;
+    -webkit-transition: opacity 1s, transform 1.5s ease;
+    -moz-transition: opacity 1s, transform 1.5s ease;
+    -ms-transition: opacity 1s, transform 1.5s ease;
+    -o-transition: opacity 1s, transform 1.5s ease;
+    transition: opacity 1s, transform 1.5s ease;
+}
+#contact #separator i {
+    font-size: 2em;
+    text-shadow: 0 5px 38px rgba(0, 0, 0, 0.35);
 }
 #contact #container {
     background-image: url("http://v5.res.dandyweng.com/images/overlay.png");
@@ -428,7 +689,7 @@ a.angle {
 }
 #contact #comment {
     position: relative;
-    width: 50%;
+    width: 75%;
     margin: 65px auto 0;
     background-color: #fff;
     background-image: url("http://v5.res.dandyweng.com/images/patterns/envelope-border.png"), url("http://v5.res.dandyweng.com/images/patterns/light_wool.jpg");
@@ -451,6 +712,78 @@ a.angle {
     -o-transition: all 0.8s ease;
     -ms-transition: all 0.8s ease;
     transition: all 0.8s ease;
+}
+#contact #comment form p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    color: rgba(0, 0, 0, 0.6);
+}
+#contact #comment form .row {
+    border-bottom: solid 1px transparent;
+}
+#contact #comment form .row.uniform {
+    margin: -40px 0 -1px -40px;
+}
+#contact #comment form .fu {
+    padding: 40px 0 0 40px;
+    width: 85%;
+    clear: none;
+    margin-left: 0;
+}
+#contact #comment form .hu {
+    padding: 40px 0 0 40px;
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+}
+#contact #comment form input {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 20px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #666;
+    color: rgba(0, 0, 0, 0.6);
+    border: solid 2px #dbbfc3;
+    border-radius: 0.5em;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+#contact #comment form textarea {
+    min-height: 200px;
+    padding-top: 1em;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 20px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #666;
+    color: rgba(0, 0, 0, 0.6);
+    border: solid 2px #dbbfc3;
+    border-radius: 0.5em;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 #footer {

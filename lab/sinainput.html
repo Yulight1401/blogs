@@ -1,10 +1,343 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sinainput</title>
+    <style type="text/css">
+        #result
+        {
+            font-size: 18px;
+            line-height: 25px;
+            padding-left: 20px;
+        }
+        .flist{
+            position: fixed;background-color: gray;padding: 10px;box-shadow: gray 1px 1px;display: none;text-align: center;
+        }
+        .at{
+            position: relative;
+        }
+    </style>
 </head>
 <body>
+<div>
+    <div style="position: relative">
+        <textarea id="textarea" rows="30" cols="105"></textarea>
+        <div id="fontlength">总字数:0</div>
+    </div>
+    <div id="tx" style="position: relative;display: block;visibility: hidden;font-size: 13.3333px;font-family: monospace;"></div>
+    <div id="flist" style="" class="flist">
+        <ul id="friendlists"></ul>
+    </div>
+    <script type="text/javascript">
+        var $=function (id) {
+            return document.getElementById(id);
+        }
+        var tx= $("textarea");
+        var divtx=$("tx");
+        var list=$("list");
+        divtx.style.height=textarea.clientHeight+"px";
+        divtx.style.width=textarea.clientWidth+"px";
+        textarea.addEventListener("keyup",function (e) {
+            var span="<span class='at'>@</span>";
+            fontlength.innerHTML="总字数:"+textarea.value.length;
+            if(e.keyCode==8) spanstate.render(cursorPosition.get($("textarea")));
+            if(e.keyCode==50&&e.shiftKey){//@
+                divtx.innerHTML=textarea.value.replace(/\@/g,span);//替换所有@字符串
+                var spanele=document.getElementsByClassName("at");
+                spanstate.active(cursorPosition.get($("textarea")).start);
+            }else{
+                spanstate.check(cursorPosition.get($("textarea")).end);
+                divtx.innerHTML=textarea.value.replace(/\@/g,span);
+                if(e.keyCode==40){
+                }else if(e.keyCode==38){
+                }else if(e.keyCode==13){
+                }else if(spanstate.ifactive()=="active"){
+                    spanstate.listenchar();
+                }
+            }
+        });
+        textarea.addEventListener("click",function (e) {
+            spanstate.check(cursorPosition.get($("textarea")).start);
+        })
 
+        /**
+         * cursorPosition Object
+         */
+        //span zhuangtai ji
+        var spanstate=(function () {
+            var spanlist=[];
+            var index=-1;
+            var state="";
+            return {
+                check:check=function (pos) {
+                    var show=false;
+                    for(var l in spanlist){
+                        if(pos>spanlist[l].start&&pos<spanlist[l].end){
+                            var temp=l;
+                            var spanele=document.getElementsByClassName("at")[temp];
+                            var postion={};
+                            postion.left=spanele.offsetLeft;
+                            postion.top=spanele.offsetTop;
+                            flist.active(postion);
+                            show=true;
+                            console.log(textarea.value.substring(spanlist[l].start,spanlist[l].end));
+                            flist.render(textarea.value.substring(spanlist[l].start,spanlist[l].end));
+                        }else{
+                            if(spanstate.ifactive()=="active"){
+                                show=true;
+                            }
+                        }
+                    };
+                    if(show){
+                    }else{
+                        flist.unactive();
+                    }
+                },
+                ifactive:ifactive=function () {
+                    return state;
+                },
+                listenchar:listenchar=function () {
+                    if(textarea.value.length>spanlist[index].start){
+                        var str=textarea.value.substring(spanlist[index].start,textarea.value.length);
+                        flist.render(str);
+                        console.log(str);
+                    }
+                },
+                active:active=function (pos) {//fang wen zishen fangfa zhijie fun() yinwei zidong zhixiang zhenggehanshu
+                    ++index;
+                    var span={};
+                    span.start=pos;
+                    spanlist.push(span);
+                    console.log(index);
+                    var spanele=document.getElementsByClassName("at")[index];
+                    var postion={};
+                    postion.left=spanele.offsetLeft;
+                    postion.top=spanele.offsetTop;
+                    flist.active(postion);
+                    state="active";
+                },
+                stoped:stoped=function (pos) {
+                    spanlist[index].end=pos;
+                    flist.unactive();
+                    state="stop";
+                },
+                complete:complete=function (pos) {
+                    spanlist[index].end=pos;
+                    flist.unactive();
+                    state="complete";
+                },
+                render:render=function (pos) {
+                    var temp=index;
+                    if($("textarea").value.length==0){
+                        spanlist=[];
+                        index=-1;
+                        //flist.unactive();
+                    }else{
+                        index=$("textarea").value.match(/\@/g).length-1;
+                        if(temp!=index){//fashenggaidong
+                            for(var l in spanlist){
+                                if(pos.start==pos.end){
+                                    if(pos.start>=(spanlist[l].start-1)&&pos.start<=(spanlist[l].start+1)){
+                                        spanlist.slice(l,1);
+                                        //flist.unactive();
+                                    }else{
+
+                                    }
+                                }else{
+                                    if(pos.start<=(spanlist[l].start)&&pos.end>=(spanlist[l].end)){
+                                        spanlist.slice(l,1);
+                                        //flist.unactive();
+                                    }else{
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })();
+
+        //liebiaozhuangtaiji
+        var flist=(function () {
+            var friendslist=["shabi","dashabi","爱偶尼亚","钢铁列样","不想之人","dianel","萨达"];
+            var flistele=$("flist");
+            var index=0;
+            var state;
+            function next() {
+                window.event.preventDefault();
+                if(index<friendslist.length-1){
+                    index++;
+                    $("friendlists").children[(index-1)].style.cssText="background-color：gray;color:black";
+                    $("friendlists").children[index].style.cssText="background-color：gray;color:white";
+                }
+            };
+            function pre() {
+                window.event.preventDefault();
+                if(index>0){
+                    index--;
+                    $("friendlists").children[(index+1)].style.cssText="background-color：gray;color:black";
+                    $("friendlists").children[index].style.cssText="background-color：gray;color:white";
+                }
+            };
+            function enter() {
+                window.event.preventDefault();
+                var text=$("friendlists").children[index].innerHTML+" ";
+                console.log(text);
+                cursorPosition.add($("textarea"),cursorPosition.get($("textarea")),text);
+                spanstate.complete(cursorPosition.get($("textarea")).start);
+            };
+            function eleclick(e) {
+                var text=e.target.innerHTML+" ";
+                cursorPosition.add($("textarea"),cursorPosition.get($("textarea")),text);
+                spanstate.complete(cursorPosition.get($("textarea")).start);
+            };
+            function renderdom(text) {
+                index=0;
+                var bl=0;
+                var str="";
+                var match=false;
+                $("friendlists").innerHTML="";
+                for(tx in friendslist){
+                    bl=friendslist[tx].indexOf(text);
+                    if(bl>=0){
+                        str+="<li>"+friendslist[tx]+"</li>";
+                        match=true;
+                    }
+                }
+                if(!match){
+                    for (var i=0;i<friendslist.length;i++){
+                        str+="<li>"+friendslist[i]+"</li>";
+                    }
+                }
+                $("friendlists").innerHTML=str;
+                if(str!="")$("friendlists").children[index].style.cssText="background-color：gray;color:white";
+            };
+            function show(pos) {
+                index=0;
+                var str="";
+                for (var i=0;i<friendslist.length;i++){
+                    str+="<li>"+friendslist[i]+"</li>";
+                }
+                $("friendlists").innerHTML=str;
+                $("friendlists").children[index].style.cssText="background-color：gray;color:white";
+                flistele.style.cssText="left:"+(pos.left+20)+"px;top:"+(pos.top+30)+"px;display:block";
+            }
+            return {
+                active:active=function (pos) {
+                    show(pos);
+                    var fl=this;
+                    for(var i=0;i<$("friendlists").children.length;i++){
+                        $("friendlists").children[i].addEventListener("click",function (e) {
+                            eleclick(e);
+                        })
+                    }
+                    window.document.onkeydown=function (e) {
+                        if(e.keyCode==40){
+                            next();
+                        }else if(e.keyCode==38){
+                            pre();
+                        }else if(e.keyCode==13){
+                            enter();
+                        }
+                    }
+                    state="active";
+                },
+                unactive:unactive=function () {
+                    flistele.style.display="none";
+                    window.document.onkeydown=function (e) {
+                    };
+                    state="unactive";
+                },
+                render:render=function (text) {
+                    renderdom(text);
+                    for(var i=0;i<$("friendlists").children.length;i++){
+                        $("friendlists").children[i].addEventListener("click",function (e) {
+                            eleclick(e);
+                        })
+                    }
+                    state="render";
+                }
+            }
+        })();
+
+
+        var cursorPosition = {
+            get: function (textarea) {
+                var rangeData = { text: "", start: 0, end: 0 };
+
+                if (textarea.setSelectionRange) { // w3c
+                    textarea.focus();
+                    rangeData.start = textarea.selectionStart;
+                    rangeData.end = textarea.selectionEnd;
+                    rangeData.text = (rangeData.start != rangeData.end) ? textarea.value.substring(rangeData.start, rangeData.end) : "";
+                } else if (document.selection) { // e
+                    textarea.focus();
+                    var i,
+                            oS = document.selection.createRange(),
+                            // oR = textarea.createTextRange()
+                            oR = document.body.createTextRange();
+                    oR.moveToElementText(textarea);
+
+                    rangeData.text = oS.text;
+                    rangeData.bookmark = oS.getBookmark();
+
+                    for (i = 0; oR.compareEndPoints('StartToStart', oS) < 0 && oS.moveStart("character", -1) !== 0; i++) {
+                        if (textarea.value.charAt(i) == '\r') {
+                            i++;
+                        }
+                    }
+                    rangeData.start = i;
+                    rangeData.end = rangeData.text.length + rangeData.start;
+                }
+
+                return rangeData;
+            },
+
+            set: function (textarea, rangeData) {
+                var oR, start, end;
+                if (!rangeData) {
+                    alert("You must get cursor position first.")
+                }
+                textarea.focus();
+                if (textarea.setSelectionRange) { // W3C
+                    textarea.setSelectionRange(rangeData.start, rangeData.end);
+                } else if (textarea.createTextRange) { // IE
+                    oR = textarea.createTextRange();
+
+                    if (textarea.value.length === rangeData.start) {
+                        oR.collapse(false);
+                        oR.select();
+                    } else {
+                        oR.moveToBookmark(rangeData.bookmark);
+                        oR.select();
+                    }
+                }
+            },
+
+            add: function (textarea, rangeData, text) {
+                var oValue, nValue, oR, sR, nStart, nEnd, st;
+                this.set(textarea, rangeData);
+
+                if (textarea.setSelectionRange) { // W3C
+                    oValue = textarea.value;
+                    nValue = oValue.substring(0, rangeData.start) + text + oValue.substring(rangeData.end);
+                    nStart = nEnd = rangeData.start + text.length;
+                    st = textarea.scrollTop;
+                    textarea.value = nValue;
+                    if (textarea.scrollTop != st) {
+                        textarea.scrollTop = st;
+                    }
+                    textarea.setSelectionRange(nStart, nEnd);
+                } else if (textarea.createTextRange) { // IE
+                    sR = document.selection.createRange();
+                    sR.text = text;
+                    sR.setEndPoint('StartToEnd', sR);
+                    sR.select();
+                }
+            }
+        }
+    </script>
+</div>
 </body>
 </html>
