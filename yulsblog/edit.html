@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YulsBlog!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/markdown.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body >
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <form role="form" id="article" style="text-align: center">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <textarea class="form-control" rows="1" v-model="title" placeholder="Title"></textarea>
+                    <label for="title">Subscribe</label>
+                    <textarea class="form-control" rows="1" v-model="subscribe" placeholder="Subscribe"></textarea>
+                    <label for="title">Author</label>
+                    <textarea class="form-control" rows="1" v-model="author" placeholder="Author"></textarea>
+                    <label for="content">Content(markdown edit)</label>
+                    <textarea class="form-control" rows="80" v-model="content" placeholder="Content" v-on:input="previewMarkdown"></textarea>
+                </div>
+                <p>Preview</p>
+                <div class="container" >
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <h1 style="text-align: center" id="article-title">
+                                {{title}}
+                            </h1>
+                            <p id="article-author" style="text-align: center;font-size: large;">{{author}}</p>
+                            <p id="article-content" style="text-align:left" v-html="precontent">
+                                {{precontent}}
+                            </p>
+                            <p style="color: gray">
+                                Update At : <small id="article-updatetime" >{{updatetime}}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" style="width: 80%;margin-bottom: 5%" v-on:click="updateArticle">Publish</button>
+            </form>
+            <div class="modal fade" id="modal-container-881436" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" data-keyboard="false"	 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel" style="text-align: center">
+                                Author
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Name</label><input type="text" v-model="nameval" debounce="500" class="form-control" id="exampleInputEmail1" /><small style="color: red" v-if="name" transition="expand">No User Found</small><small v-if="nameok" style="color: green" transition="expand">Vertified√</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label><input type="password"  v-model="passwordval" debounce="500" class="form-control" id="exampleInputPassword1"  /><small style="color: red" transition="expand" v-if="password">Wrong Password</small><small v-if="passwordok" style="color: green" transition="expand">Vertified√</small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="src/blogmodel.js"></script>
+<script src="edit/edit_app.js"></script>
+</html>

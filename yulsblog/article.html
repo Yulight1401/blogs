@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YulsBlog!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="js/markdown.js"></script>
+    <script src="js/vue.js"></script>
+    <style type="text/css">
+    	img{
+    		max-width: 98%;
+    	}
+    </style>
+</head>
+<body >
+<div class="container" id="article">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h1 style="text-align: center" id="article-title">
+                {{title}}
+            </h1>
+            <p id="article-authoer" style="text-align: center;font-size: large;">{{author}}</p>
+            <p id="article-content" style="text-align:left" v-html="afcontent">
+                {{afcontent}}
+            </p>
+            <p style="color: gray">
+                Update At : <small id="article-updatetime" >{{updatetime}}</small>
+            </p>
+        </div>
+        <a id="revise"  style="float: left;" v-on:click="reviseArticle">Revise</a><a id="delete" v-on:click="deleteArticle"  style="float: right;">Delete</a><a id="suredelete" v-on:click="sureDelete" style="float: right;display:none">sureDelete</a>
+    </div>
+</div>
+</body>
+<script src="src/blogmodel.js"></script>
+<script src="article/article_app.js"></script>
+</html>

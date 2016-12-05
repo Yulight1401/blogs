@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Yul,Hello Blog</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/yul_animate.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="yulsblog/js/vue.js"></script>
+</head>
+<body>
+<div id="yulslider">
+    <div id="slider_content">
+        <section id="intro">
+            <svg id="yulsvg" width="580" height="400" class=""  xmlns="http://www.w3.org/2000/svg" style="">
+                <g>
+                    <path id="svg_30" d="m99.5,83l52,113c0,0 -2,231 -2,151" opacity="1" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000000" fill="none"/>
+                    <path id="svg_31" d="m151.5,193c52,-110 45,-110 45,-110" opacity="1" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000000" fill="none"/>
+                    <path id="svg_32" d="m227,261l0,104l100,0l0,-104" opacity="1" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000000" fill="none"/>
+                    <path id="svg_33" d="m402.5,133l0,232l100,0" opacity="1" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000000" fill="none"/>
+                </g>
+            </svg>
+            <div id="intro_title">Hello Blog</div>
+        </section>
+        <section id="content">
+            <div id="content_menu"></div>
+            <div id="content_bar"><button></button></div>
+            <div id="menu_content">
+                <ul>
+                    <li>Apps</li>
+                    <li>Games</li>
+                    <li><a href="lab/index.html" style="text-decoration: none;color: white">Lab</a></li>
+                    <li>Architect</li>
+                    <li>Design</li>
+                    <li>About</li>
+                </ul>
+            </div>
+            <div id="content_content">
+                <div class="content_card"  v-for="article in articles" v-on:click="openurl(article.id)">
+                    <div class="card_mak"></div>
+                    <p class="card_title">{{article.title}}</p>
+                    <p class="card_des">{{article.subscribe}}</p>
+                    <p class="card_content" v-html="article.content"> {{article.content}}</p>
+                </div>
+            </div>
+            <div id="blog_content">
+                <p class="blog_title"></p>
+                <p class="blog_des"></p>
+                <div class="blog_content"></div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+<script>
+    var blog_state="close";
+    document.getElementById("menu_content").style.cssText="margin-top:-"+document.getElementById("menu_content").clientHeight/2+"px";
+    if(window.innerWidth<580){
+        document.getElementById("yulsvg").style.cssText="transform:scale("+window.innerWidth/580+")";
+    }
+    document.getElementById("content_menu").style.display="none";
+    document.getElementById("menu_content").style.display="none";
+    var bar=0;
+    document.getElementById("content_bar").addEventListener("click",function () {
+        event.preventDefault();
+        bar++;
+        if(blog_state=="close"){
+        if(bar%2==0){
+            document.getElementById("content_menu").style.cssText="transform:scale(1)";
+            document.getElementById("content_bar").setAttribute("class","");
+            for(var i=0;i<6;i++){
+                document.getElementById("menu_content").children[0].children[i].setAttribute("class","animated  fadeOut");
+            }
+        }else{
+            document.getElementById("content_menu").style.cssText="transform:scale(70)";
+            document.getElementById("menu_content").style.display="block";
+            document.getElementById("content_bar").setAttribute("class","bar_over");
+            for(var i=0;i<6;i++){
+                document.getElementById("menu_content").children[0].children[i].setAttribute("class","animated  fadeInRight");
+                document.getElementById("menu_content").children[0].children[i].style.cssText="animation-delay:"+i*0.15+"s";
+            }
+        }
+        }else{
+            document.getElementById("blog_content").style.cssText="transform:translate(0px,0px)";
+            document.getElementById("content_bar").setAttribute("class","");
+            setTimeout(function () {
+                document.getElementById("blog_content").style.cssText="display:none;transform:translate(0px,0px)";
+            },700)
+            blog_state="close";
+            bar=0;
+        }
+    })
+    document.getElementById("intro").style.height=window.innerHeight+"px";
+    document.getElementById("yulsvg").setAttribute("class","animated  dash");
+    setTimeout(function () {
+        document.getElementById("intro_title").style.display="block";
+        document.getElementById("yulsvg").style.cssText="transform:scale(0.6) translate(0,-50%);";
+        document.getElementById("intro_title").setAttribute("class","animated  fadeInUp");
+        document.getElementById("content").style.height=window.innerHeight+"px";
+        setTimeout(function () {
+            document.getElementById("intro").style.height=0+"px";
+            document.getElementById("yulsvg").style.position="fixed";
+            document.getElementById("content_menu").style.display="block";
+            document.getElementById("content_bar").style.display="flex";
+            document.getElementById("content_menu").setAttribute("class","animated  fadeIn");
+            document.getElementById("content_bar").setAttribute("class","animated  fadeIn");
+            document.getElementById("intro_title").setAttribute("class","animated  fadeOut");
+//            for(var i=0;i< document.getElementById("content_content").children.length;i++){
+//                document.getElementById("content_content").children[i].setAttribute("class","content_card animated  fadeInUp");
+//                document.getElementById("content_content").children[i].style.cssText="animation-delay:"+i*0.15+"s";
+//            }
+        },1000)
+    },1100);
+    document.onscroll=function () {
+
+    }
+</script>
+<script src="yulsblog/src/blogmodel.js"></script>
+<script src="yulsblog/src/app2.js"></script>
+</html>

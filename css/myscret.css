@@ -1,0 +1,112 @@
+html,body{
+	height: 100%;
+	
+}
+.myh1{
+	margin-top: 8%;
+	text-align: center;
+	font-family: "comic sans ms";
+}
+.myinput{
+	padding: 5%;
+	margin-top: 5%;
+	
+}
+.hriloveu{
+	text-align: center;
+	width: 60%;
+	height: 20%;
+	position: relative;
+	left: 20%;
+	font-family: "宋体";
+	background-color: #DD524D;
+	color: white;
+	font-size: 25px;
+	padding-top: 10%;
+	border-radius: 50px;
+	margin-top: 10%;
+}
+.myinput input{
+	margin-top: 1em;
+	
+}
+.mysearch{
+	padding: 5%;
+	margin-top: 2%;
+	margin-bottom: 5%;
+}
+.swiper-slide-my {
+	    font-family: "微软雅黑";
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 30%;
+        height:25em;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+.mybutton {
+	font-family: "微软雅黑";
+	padding: 2em;
+	left: 5%;
+	width: 90%;
+	top: 5%;
+	bottom: 1em;
+}
+.fromtopmoving{
+	position: relative;
+	animation: fromtop 2s;
+		
+}
+.searchbtn{
+	width: 90%;
+	left: 5%
+	
+}
+.swiper-container-v{
+	width: 100%;
+	height: 100%;
+}
+.mywrapper{
+	margin-top: 10px;
+}
+.frombottommoving{
+	position: relative;
+	animation:  frombottom 2s;	
+}
+@keyframes fromtop{
+	0% {top:-200px;}
+	100%{top:0px;}
+}
+@-moz-keyframes fromtop{
+	0% {top:-200px;}
+	100%{top:0px;}
+}
+@-webkit-keyframes fromtop{
+	0% {top:-200px;}
+	100%{top:0px;}
+}
+
+@keyframes frombottom{
+	0% {top:200px;}
+	100%{top:0px;}
+}
+@-moz-keyframes frombottom{
+	0% {top:200px;}
+	100%{top:0px;}
+}
+@-webkit-keyframes frombottom{
+	0% {top:200px;}
+	100%{top:0px;}
+}
