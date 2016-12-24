@@ -3,50 +3,92 @@
 <head>
     <title>YulsBlog!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/snow.css" rel="stylesheet">
     <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="yulsblog/js/vue.js"></script>
 </head>
-<body >
-<div class="container">
+<style>
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 3px white;
+	background-color: white;
+}
+
+body::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: gray;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: gray;
+	border: none;
+}</style>
+<body style="overflow-x:hidden">
+<section class="snow">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</section>
+<div style="position:relative;left:0px;top:0px;height:0px;width:100%;text-align:center;color:black;opacity:0.6;font-size:18px;overflow:hidden;" id="first">
+  <h1 style="font-weight:light;font-size:3rem;" id="title">Yul</h1>
+</div>
+<nav class="navbar navbar-default navbar-fixed-top" style="position:relative;width:100%;" role="navigation" id="nav">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Yul's Blog</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Functions<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">All Articles</a>
+                    </li>
+                    <li>
+                        <a href="gobang/index.html">Gobang Game</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="yulsblog/edit.html">Edit</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ariticle Name"/>
+            </div> <button type="submit" class="btn btn-default">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="container" style="">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Yul's Blog</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Functions<strong class="caret"></strong></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">All Articles</a>
-                                </li>
-                                <li>
-                                    <a href="gobang/index.html">Gobang Game</a>
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <li>
-                                    <a href="yulsblog/edit.html">Edit</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ariticle Name"/>
-                        </div> <button type="submit" class="btn btn-default">Search</button>
-                    </form>
-                </div>
-            </nav>
+
             <div class="jumbotron" style="margin-top: 70px" id="head-article">
                 <h1 id="head-title">
                    {{title}}
@@ -67,7 +109,7 @@
             </div>
             <div class="row clearfix" id="otherarticle-container">
                 <div v-for="article in articles">
-                    <div class="col-md-4 column" style="overflow:hidden;">
+                    <div class="col-md-4 column" style="">
                         <h2>
                             {{article.title}}
                         </h2>
@@ -95,4 +137,30 @@
 </body>
 <script src="yulsblog/src/blogmodel.js"></script>
 <script src="yulsblog/src/app.js"></script>
+<script>
+document.getElementById('first').style.height=getViewport().height+"px";
+document.getElementById('title').style.lineHeight=getViewport().height+"px";
+
+window.onscroll=function () {
+  document.getElementById('title').style.lineHeight=getViewport().height+document.body.scrollTop+"px";
+  if(document.body.scrollTop>=getViewport().height){
+    document.getElementById('nav').style.position="fixed";
+  }else{
+    document.getElementById('nav').style.position="relative";
+  }
+}
+function getViewport(){
+　　　　if (document.compatMode == "BackCompat"){
+　　　　　　return {
+　　　　　　　　width: document.body.clientWidth,
+　　　　　　　　height: document.body.clientHeight
+　　　　　　}
+　　　　} else {
+　　　　　　return {
+　　　　　　　　width: document.documentElement.clientWidth,
+　　　　　　　　height: document.documentElement.clientHeight
+　　　　　　}
+　　　　}
+　　}
+</script>
 </html>
